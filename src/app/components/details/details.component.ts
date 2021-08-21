@@ -22,8 +22,11 @@ export class DetailsComponent implements OnInit {
   ngOnInit() {
     let coords = this.navParams.get('coords');
     this.slide = this.navParams.get('data');
-    this.renderer.setStyle(this.headerImage.nativeElement, 'transform', `translate3d(0, ${coords.y - 56}px, 0) scale3d(1.2, 0.9, 1)`);
-    this.renderer.setStyle(this.headerImage.nativeElement, 'transition', '0.1s ease-in-out');
+    if (this.headerImage) {
+
+      this.renderer.setStyle(this.headerImage.nativeElement, 'transform', `translate3d(0, ${coords.y - 56}px, 0) scale3d(1.2, 0.9, 1)`);
+      this.renderer.setStyle(this.headerImage.nativeElement, 'transition', '0.1s ease-in-out');
+    }
     setTimeout(() => {
       this.renderer.removeStyle(this.headerImage.nativeElement, 'transform');
     }, 50);
