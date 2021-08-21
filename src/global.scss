@@ -24,3 +24,42 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+// @import '~swiper/swiper-bundle';
+// @import "~swiper/swiper";
+// @import "~swiper/components/effect-coverflow/effect-coverflow";
+// @import "~swiper/components/pagination/pagination";
+
+:root{
+    --primaryClay:#2A2F3D;
+    --secondaryClay:#818899;
+    --primaryWhite:#FFFFFF;
+    --secondaryWhite:#f1eded;
+    --primaryRed:#FF4F61;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--primaryWhite);
+    color:black;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.swiper-slide:not(.swiper-slide-active){
+        opacity: 0.6;
+         .slide_content_heading > *{
+        opacity: 0;
+    }
+}
+.swiper-slide-active  .slide{
+    transform: translateY(-20px);
+}
+
+.swiper-slide img {
+  margin-right:4px;
+}
+.swiper-container{
+    overflow: visible;
+}

@@ -1,0 +1,19 @@
+ .rings{
+    &_container{
+      position: relative;
+      top:-40%;
+      left:-45%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index:-1;
+    }  
+  border: 20px solid var(--secondaryWhite);
+  opacity: 0.7;
+  background-color: transparent;
+  border-radius: 50%;
+  position: absolute;
+  height:var(--size);
+  width:var(--size);
+
+  }

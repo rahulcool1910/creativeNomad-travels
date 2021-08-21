@@ -5,15 +5,21 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
-
+import { HeaderComponent } from '../components/header/header.component';
+import { SlidesComponent } from '../components/slides/slides.component';
+import { SwiperModule } from "swiper/angular";
+import { SlideActionsComponent } from '../components/slide-actions/slide-actions.component';
+import { RingsComponent } from '../components/rings/rings.component';
+import { DetailsComponent } from '../components/details/details.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    SwiperModule
   ],
-  declarations: [HomePage]
+  declarations: [HomePage, HeaderComponent, SlidesComponent, SlideActionsComponent, RingsComponent, DetailsComponent]
 })
 export class HomePageModule {}

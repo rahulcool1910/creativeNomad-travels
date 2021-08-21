@@ -1,0 +1,7 @@
+<div class="slide" (click)="onClick($event)"  #slideRef>
+  <img [src]="slide.imageURL" [alt]="slide.heading">
+<div class="slide_content">
+  <h1 class="slide_content_heading">{{slide.heading}}</h1>
+  <p class="slide_content_date">{{slide.date|date}}</p>
+</div>
+</div>

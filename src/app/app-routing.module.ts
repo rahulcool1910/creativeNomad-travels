@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { RingsComponent } from './components/rings/rings.component';
+import { SlidesComponent } from './components/slides/slides.component';
 
 const routes: Routes = [
   {
@@ -11,6 +13,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'travel/:id',
+    component: SlidesComponent
+  }
 ];
 
 @NgModule({
