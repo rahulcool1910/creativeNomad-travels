@@ -1,0 +1,7 @@
+{
+  "name": "creativeNomadas-travels",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
