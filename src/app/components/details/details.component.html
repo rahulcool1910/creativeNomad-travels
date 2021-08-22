@@ -1,10 +1,11 @@
-<div>
-<div class="slide"  (click)="close()"  #slideRef>
-  <img #header [src]="slide.imageURL"  [alt]="slide.heading">
-<div class="slide_content">
-  <h1 class="slide_content_heading">{{slide.heading}}</h1>
-  <p class="slide_content_date">{{slide.date|date}}</p>
-</div>
-</div>
-  hello world!!
+<div #hello>
+  <div class="slide" (click)="close()" #slideRefs [style]="getStyle()">
+    <img  [src]="slide.imageURL" [alt]="slide.heading" #header>
+    <div class="slide_content">
+      <h1 class="slide_content_heading">{{slide.heading}}</h1>
+      <p class="slide_content_date">{{slide.date|date}}</p>
+    </div>
+  </div>
+  <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum in veniam sit voluptatibus distinctio excepturi totam exercitationem tenetur, atque doloribus dolor nobis porro ullam tempora ipsam inventore eaque repellat. Repellendus.
+  </h1>
 </div>

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
@@ -12,14 +12,18 @@ import { SlideActionsComponent } from '../components/slide-actions/slide-actions
 import { RingsComponent } from '../components/rings/rings.component';
 import { DetailsComponent } from '../components/details/details.component';
 
+
+
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    SwiperModule
+    SwiperModule,
   ],
-  declarations: [HomePage, HeaderComponent, SlidesComponent, SlideActionsComponent, RingsComponent, DetailsComponent]
+  declarations: [HomePage, HeaderComponent, SlidesComponent, SlideActionsComponent, RingsComponent, DetailsComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HomePageModule {}

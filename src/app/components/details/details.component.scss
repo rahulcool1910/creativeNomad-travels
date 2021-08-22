@@ -5,12 +5,39 @@
     overflow: hidden;
     position: relative;
     transition: all 0.5s ;
+    &::before{
+        content: ' ';
+        position: absolute;
+        // background: url(var(--img));
+        // background-color: red;
+        width:100%;
+        height: 100%;
+        bottom: 0;
+        opacity: 0;
+        animation:imageFadeIn 1s;
+        // animation-duration: reverse;
+
+}
+ &_like{
+        position: absolute;
+        width:30px;
+        height:30px;
+        transition: height width 1s;
+        &:hover {
+          #heart{
+            fill:var(--primaryRed);
+
+          }
+        
+
+        }
+    }
     img{
         width: 100%;
         height: 100%;
         object-fit: cover;
-        
-    }
+        transition: all 1s;
+        }
     &_content{
         position: absolute;
         color:var(--primaryWhite);
@@ -30,5 +57,25 @@
 }
 
 
+@keyframes imageFadeIn{
+    0%{
+        width:0%;
+        height:0%;
+        opacity: 1;
+    }
+    100%{
+    width:100%;
+    height:100%;
+    opacity: 0;
+    }
+
+
+}
+
+
+.absoulte{
+    position:absolute;
+    bottom:0;
+}
 
 

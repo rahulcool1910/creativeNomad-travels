@@ -8,7 +8,8 @@ import { Slides } from 'src/app/types/types';
   styleUrls: ['./details.component.scss'],
 })
 export class DetailsComponent implements OnInit {
-  @ViewChild('header') headerImage: ElementRef;
+  @ViewChild('slideRefs') headerImage: ElementRef;
+  @ViewChild('hello') hello: ElementRef
   constructor(
     private modalCtrl: ModalController,
     private navParams: NavParams,
@@ -20,20 +21,33 @@ export class DetailsComponent implements OnInit {
     imageURL: "../../assets/images/neonlight.jpeg"
   }
   ngOnInit() {
+
+
+
     let coords = this.navParams.get('coords');
     this.slide = this.navParams.get('data');
-    if (this.headerImage) {
-
-      this.renderer.setStyle(this.headerImage.nativeElement, 'transform', `translate3d(0, ${coords.y - 56}px, 0) scale3d(1.2, 0.9, 1)`);
-      this.renderer.setStyle(this.headerImage.nativeElement, 'transition', '0.1s ease-in-out');
-    }
     setTimeout(() => {
-      this.renderer.removeStyle(this.headerImage.nativeElement, 'transform');
-    }, 50);
+      console.log(this.headerImage, this.hello, coords)
+      if (this.headerImage) {
+
+        this.renderer.setStyle(this.headerImage.nativeElement, 'transform', `translate3d(0, 0, 0) scale3d(1, 0.9, 1)`);
+        this.renderer.setStyle(this.headerImage.nativeElement, 'transition', '0.1s ease-in-out');
+      }
+      setTimeout(() => {
+        this.renderer.removeStyle(this.headerImage.nativeElement, 'transform');
+      }, 50);
+    }, 100);
+
   }
+
+
 
   close() {
     this.modalCtrl.dismiss();
+  }
+
+  getStyle() {
+    return `--img:${this.slide.imageURL}`
   }
 
 }

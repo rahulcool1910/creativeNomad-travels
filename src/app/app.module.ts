@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { SwiperModule } from 'swiper/angular';
 import { CommonModule } from '@angular/common';
 
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
