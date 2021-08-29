@@ -14,6 +14,7 @@ export class SlidesComponent implements OnInit {
 
   @ViewChild('slideRef') slideRef: ElementRef
   @ViewChild('checkbox') checkbox: ElementRef
+  isLikeClicked: boolean = false;
   @Input() slide: Slides = {
     heading: "trip to tokyo",
     date: "10/19/2021",
@@ -24,7 +25,36 @@ export class SlidesComponent implements OnInit {
   ngOnInit() {
   }
 
+  like(event) {
+    this.isLikeClicked = true;
+    event.preventDefault()
+    console.log(this.checkbox.nativeElement.checked, "from like")
+    this.checkbox.nativeElement.checked = !this.checkbox.nativeElement.checked
+    setTimeout(() => {
+      this.isLikeClicked = false
+
+    }, 200);
+  }
+
   async onClick(event: any) {
+    // console.log(this.isLikeClicked, "from onClick")
+    if (!this.isLikeClicked) {
+      event.preventDefault()
+
+      this.modalCtrl.create({
+        component: DetailsComponent,
+        enterAnimation: myFadeInAnimation,
+        componentProps: {
+          'coords': {
+            x: event.target.x,
+            y: event.target.y
+          },
+          data: this.slide
+        }
+      }).then((modal) => {
+        modal.present();
+      });
+    }
     // this.slideRef.nativeElement.classList.add("transition")
     // setTimeout(() => {
       //   this.router.navigate(["/travel", "dfjsf"])
@@ -33,33 +63,16 @@ export class SlidesComponent implements OnInit {
     // console.log(event.currentTarget)
     // event.preventDefault()
 
-    // this.modalCtrl.create({
-    //   component: DetailsComponent,
-    //   enterAnimation: myFadeInAnimation,
-    //   componentProps: {
-    //     'coords': {
-    //       x: event.target.x,
-    //       y: event.target.y
-    //     },
-    //     data: this.slide
-    //   }
-    // }).then((modal) => {
-    //   modal.present();
-    // });
 
 
   }
 
   // play(event): void {
-  //   event.preventDefault()
   //   this.ngZone.runOutsideAngular(() => {
   //     this.animationItem.play();
   //   });
 
   // }
 
-  like(event) {
-    this.checkbox.nativeElement.checked = !this.checkbox.nativeElement.checked
-    event.preventDefault()
-  }
+
 }

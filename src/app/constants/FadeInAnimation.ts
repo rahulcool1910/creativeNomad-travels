@@ -28,7 +28,7 @@ import { createAnimation, Animation } from '@ionic/core';
 
 export function myFadeInAnimation(rootElement: HTMLElement): Animation {
     const imageAnimation = createAnimation()
-        .addElement(rootElement.querySelector('img'))
+        .addElement(rootElement.querySelector('.slide_img'))
         .easing('ease-in-out')
         .duration(400)
         .fromTo('opacity', 0, 1)

@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Slides } from '../types/types';
 import { SwiperComponent } from 'swiper/angular';
 import { slideOpts } from '../constants/coverflow';
@@ -9,6 +9,20 @@ import { slideOpts } from '../constants/coverflow';
 })
 export class HomePage {
   slideOpts = slideOpts
+
+  ringsTop: any = {
+    top: "2%",
+    bottom: "",
+    right: "",
+    left: "5%"
+  }
+
+  ringsBottom: any = {
+    top: "%",
+    bottom: "-1%",
+    right: "50%",
+    left: "%"
+  }
 
   slides: Slides[] = [
     {

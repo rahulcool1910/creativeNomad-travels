@@ -1,8 +1,10 @@
  .rings{
     &_container{
-      position: relative;
-      top:-40%;
-      left:-45%;
+      position: absolute;
+      top:var(--top);
+      left:var(--left);
+      bottom:var(--bottom);
+      right:var(--right);
       display: flex;
       justify-content: center;
       align-items: center;

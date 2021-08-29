@@ -1,13 +1,19 @@
 <div class="home">
   <app-header></app-header>
-  <h1 class="home_heading">your<br> journals</h1>
-  <div class="home_slides">
-      <app-rings></app-rings>
-    <ion-slides [options]="slideOpts">
-      <ion-slide *ngFor="let slide of slides" class="home_slides">
-        <app-slides [slide]="slide"></app-slides>
-      </ion-slide>
-    </ion-slides>
+  <h1 class="home_heading">
+    your<br />
+    journals
+  </h1>
+  <div class="home_slides_container">
+    <div class="home_slides">
+      <app-rings [pos]="ringsTop"></app-rings>
+      <app-rings [pos]="ringsBottom"></app-rings>
+      <ion-slides [options]="slideOpts">
+        <ion-slide *ngFor="let slide of slides" class="home_slides">
+          <app-slides [slide]="slide"></app-slides>
+        </ion-slide>
+      </ion-slides>
     </div>
-<app-slide-actions></app-slide-actions>
+  </div>
+  <app-slide-actions></app-slide-actions>
 </div>

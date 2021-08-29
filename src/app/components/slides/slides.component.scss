@@ -20,15 +20,8 @@
         right:10%;
         top:3%;
         transition: height width 1s;
-        &:hover {
-          #heart{
-            fill:var(--primaryRed);
-
-          }
-        
 
         }
-    }
     &_content{
         position: absolute;
         color:var(--primaryWhite);
@@ -89,9 +82,9 @@ left:-90%;
   
 }
 
-.hidden{
-    opacity: 0;
-}
+// .hidden{
+//     opacity: 0;
+// }
 
 
 

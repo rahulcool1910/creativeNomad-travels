@@ -47,12 +47,12 @@ body{
     margin: 0;
 }
 
-.swiper-slide:not(.swiper-slide-active){
-        opacity: 0.6;
-         .slide_content_heading > *{
-        opacity: 0;
-    }
-}
+// .swiper-slide:not(.swiper-slide-active){
+//         opacity: 0.6;
+//          .slide_content_heading > *{
+//         opacity: 0;
+//     }
+// }
 // .swiper-slide-active  .slide{
 //     transform: translateY(-20px);
 // }
@@ -73,7 +73,10 @@ ion-modal{
 
 svg{
   cursor:pointer; overflow:visible; width:60px;
-  #heart{transform-origin:center; animation:animateHeartOut .3s linear forwards;}
+  #heart{transform-origin:center; animation:animateHeartOut .3s linear forwards;
+  svg{
+    fill:white;
+  }}
   #main-circ{transform-origin:29.5px 29.5px;}
 }
 

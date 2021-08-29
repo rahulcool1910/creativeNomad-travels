@@ -10,6 +10,8 @@ import { Slides } from 'src/app/types/types';
 export class DetailsComponent implements OnInit {
   @ViewChild('slideRefs') headerImage: ElementRef;
   @ViewChild('hello') hello: ElementRef
+  @ViewChild('checkbox') checkbox: ElementRef
+
   constructor(
     private modalCtrl: ModalController,
     private navParams: NavParams,
@@ -48,6 +50,10 @@ export class DetailsComponent implements OnInit {
 
   getStyle() {
     return `--img:${this.slide.imageURL}`
+  }
+
+  like() {
+    this.checkbox.nativeElement.checked = !this.checkbox.nativeElement.checked
   }
 
 }
